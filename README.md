@@ -39,6 +39,19 @@ other folder!
 Once unzipped you can double-click diffpdf.exe to run it. You might also
 like to add a shortcut to it from the desktop or from the start menu.
 
+Ubuntu Users
+============
+
+The following packages are required to compile Ubuntu 14.04 LTS:
+
+* debhelper
+* qt4-qmake
+* libqt4-dev
+* qt4-linguist-tools
+* libpoppler-qt4-dev
+* libpoppler-cpp-dev
+* hardening-wrapper
+
 Compiling and Installing DiffPDF (Mac-specific notes are at the end.)
 ================================
 
@@ -52,21 +65,30 @@ Mac OS X users can get a compiler by installing Xcode; you'll need to
 get Qt and Poppler separately.
 
 1. Unpack the archive file, diffpdf-XXX.tar.gz
+
     $ tar xvfz diffpdf-XXX.tar.gz
+
 2. Change directory to diffpdf-XXX
+
     $ cd diffpdf-XXX
+
 3. Run lrelease; on some sytems this might be called lrelease-qt4
+
     $ lrelease diffpdf.pro
+
 4. Run qmake; on some systems, run qmake-qt4
+
     $ qmake
+
 5. Run make
+
     $ make
+
 6. Copy or soft-link the diffpdf executable to somewhere on your PATH
 7. Only the executable is needed; all the files that were unpacked or
    generated can be safely deleted.
 
 That's it!
-
 
 Running DiffPDF
 ===============
@@ -80,7 +102,6 @@ If you hit a bug, please report it to mark@qtrac.eu. Be sure to include
 "DiffPDF" in the subject line and specify the version you are using
 and details of your system, e.g., operating system name and version,
 compiler name and version, Qt library version, Poppler library version.
-
 
 License
 =======
@@ -105,11 +126,11 @@ Here's how to build it:
     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.github.com/gist/323731)"
     $ brew install qt
     $ brew install poppler --with-qt4
-    
+
     # Dirs must be writeable because macdeployqt modifies copied files
     $ chmod -R u+w /usr/local/Cellar/qt/
     $ chmod -R u+w /usr/local/Cellar/poppler/
-    
+
     $ curl -O http://www.qtrac.eu/diffpdf-1.5.0.tar.gz
     $ tar xvfz diffpdf-1.5.0.tar.gz
     $ cd diffpdf-1.5.0
